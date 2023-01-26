@@ -5,14 +5,14 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import style from './ContacForm.module.scss';
-import { getContacts } from '../../redux/selectors';
+import { selectContacts } from '../../redux/selectors';
 import { useDispatch } from 'react-redux';
 import { addContacts } from '../../services/fetch';
 import { nanoid } from 'nanoid';
 import { useSelector } from 'react-redux';
 
 export const ContactForm = () => {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');

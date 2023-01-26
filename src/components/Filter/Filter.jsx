@@ -1,14 +1,13 @@
 import style from './Filter.module.scss';
-import { getFilter } from '../../redux/selectors';
+import { selectFilter } from '../../redux/selectors';
 import { filteradd } from '../../redux/filterSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const Filter = () => {
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   const onFilter = ev => {
-    console.log(ev.currentTarget.value);
     dispatch(filteradd(ev.currentTarget.value));
   };
 

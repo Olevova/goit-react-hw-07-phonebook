@@ -9,7 +9,6 @@ export const ContactElem = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   const deleteContactId = () => dispatch(deleteContact(id));
-  console.log(id, name, number, 3);
 
   return (
     <ul className={style.ulElem}>
